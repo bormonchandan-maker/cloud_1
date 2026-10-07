@@ -1,0 +1,12 @@
+services:
+  khoroch:
+    build: .
+    container_name: khoroch-tracker
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - khoroch_data:/data   # SQLite DB ekhane save hoy
+
+volumes:
+  khoroch_data:
